@@ -22,10 +22,10 @@ class productCard extends HTMLElement {
      </section>
      <section class="bottom-side">
      <h1 class="product-name">${this.title}</h1>
-     <h2>${this.collection}</h2>
+     <h2 class="product-collection">${this.collection}</h2>
      <p>${this.description}</p>
      <div class="buying-side">
-     <span>${this.price}</span>
+     <span class"product-price">${this.price}</span>
      <button>Buy now</button>
      </div>
      </section>
@@ -59,11 +59,25 @@ class productCard extends HTMLElement {
     
     .product-name {
     color:var(--title-color);
-    font-size:30px;
+    font-size:35px;
     }
-
-
-
+    
+    .product-collection {
+      color:#222222;
+      letter-spacing: 0.3rem;
+      text-transform: uppercase;
+      font-size:15px;
+      font-weight:400;
+    }
+    
+    
+    .product-price {
+      
+      font-weight:800;
+      color:yellow;
+      
+    }
+    
     .card {
     width:100%;
     min-width: 300px;
