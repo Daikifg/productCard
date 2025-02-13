@@ -27,7 +27,7 @@ class productCard extends HTMLElement {
      </div>
      <p class="product-description">${this.description}</p>
      <div class="buying-side">
-     <span class="product-price">${this.price}</span>
+     <span class="product-price">${this.price.split(" ")[0]}</span>
      <button class="buy-btn">Buy now</button>
      </div>
      </section>
@@ -108,7 +108,7 @@ class productCard extends HTMLElement {
     padding:2rem 1rem;
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
+    gap:2rem;
     min-height:16rem;
     }
 
