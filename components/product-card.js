@@ -21,12 +21,14 @@ class productCard extends HTMLElement {
        </figure>
      </section>
      <section class="bottom-side">
+     <div class="titles-container">
      <h1 class="product-name">${this.title}</h1>
      <h2 class="product-collection">${this.collection}</h2>
-     <p>${this.description}</p>
+     </div>
+     <p class="product-description">${this.description}</p>
      <div class="buying-side">
-     <span class"product-price">${this.price}</span>
-     <button>Buy now</button>
+     <span class="product-price">${this.price}</span>
+     <button class="buy-btn">Buy now</button>
      </div>
      </section>
     </article>
@@ -56,6 +58,10 @@ class productCard extends HTMLElement {
     --mark-font-family: Roboto;
     }
 
+    .buying-side {
+    display:flex;
+    justify-content: space-between;
+    }
     
     .product-name {
     color:var(--title-color);
@@ -70,18 +76,27 @@ class productCard extends HTMLElement {
       font-weight:400;
     }
     
-    
     .product-price {
-      
-      font-weight:800;
-      color:yellow;
-      
+      font-weight:700;
+      font-size: 2rem;
+      color: gray;
+    }
+
+    .buy-btn {
+      text-transform: uppercase;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      width: 7rem;
+      border-radius:var(--rounded-btn-radius)
+
     }
     
     .card {
     width:100%;
     min-width: 300px;
     max-width: 600px;
+    display:flex;
+    flex-direction:column;
     }
 
     .card .top-side {
@@ -91,6 +106,10 @@ class productCard extends HTMLElement {
     .card .bottom-side {
     background-color: var(--secondary-color);
     padding:2rem 1rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:16rem;
     }
 
     .mark-text {
@@ -114,7 +133,22 @@ class productCard extends HTMLElement {
     .product {
       max-width: 70%;
       position:relative;
-      top:3rem;
+      top:3.5rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      .card {
+        flex-direction:row;
+        max-width:80%;
+        justify-self:center;
+        height:25rem;
+      }
+
+      .product {
+      top:5rem;
+      max-width: 110%;
+      transform: rotate(-25deg);
+      }
     }
 
     </style>
